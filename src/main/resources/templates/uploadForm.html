@@ -1,6 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-
+	<div>
+		<h1>
+			CUBE SUMMATION
+		</h1>
+	</div>
 	<div th:if="${message}">
 		<h2 th:text="${message}"/>
 	</div>
@@ -8,8 +12,8 @@
 	<div>
 		<form method="POST" enctype="multipart/form-data" action="/">
 			<table>
-				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+				<tr><td>Archivo de entrada:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Ejecutar archivo" /></td></tr>
 			</table>
 		</form>
 	</div>
@@ -19,6 +23,16 @@
 			<li th:each="file : ${files}">
 				<a th:href="${file}" th:text="${file}" />
 			</li>
+		</ul>
+	</div>
+	<div>
+		<h2>Ayuda</h2>
+		<ul>
+			<li>1. Cree un archivo valido de texto con los datos de entrada del programa.</li>
+			<li>2. Presione el boton seleccionar archivo, seleccione el archivo de entrada creado en el punto 1.</li>
+			<li>3. Presione el boton Ejecutar archivo.</li>
+			<li>4. En la pantalla aparecera el link al archivo output.out, en donde estaran
+			los resultados de la ejecuccion del programa.</li>
 		</ul>
 	</div>
 

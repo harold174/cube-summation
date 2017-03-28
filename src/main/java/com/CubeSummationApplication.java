@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
 import com.storage.StorageProperties;
 import com.storage.StorageService;
@@ -34,4 +35,6 @@ public class CubeSummationApplication {
             storageService.init();
 		};
 	}
+	
+	
 }
