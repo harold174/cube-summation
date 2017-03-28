@@ -2,6 +2,11 @@ package com.storage;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * 
+ * @author harold.murcia
+ *
+ */
 @ConfigurationProperties("storage")
 public class StorageProperties {
 

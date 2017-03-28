@@ -6,6 +6,11 @@ import org.springframework.web.multipart.MultipartFile;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
+/**
+ * 
+ * @author harold.murcia
+ *
+ */
 public interface StorageService {
 
     void init();
@@ -19,5 +24,7 @@ public interface StorageService {
     Resource loadAsResource(String filename);
 
     void deleteAll();
+    
+    void deleteFile(String fileName);
 
 }

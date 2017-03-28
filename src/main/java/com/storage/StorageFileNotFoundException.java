@@ -1,5 +1,10 @@
 package com.storage;
 
+/**
+ * 
+ * @author harold.murcia
+ *
+ */
 public class StorageFileNotFoundException extends StorageException {
 
     public StorageFileNotFoundException(String message) {

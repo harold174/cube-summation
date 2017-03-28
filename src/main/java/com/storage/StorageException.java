@@ -1,5 +1,10 @@
 package com.storage;
 
+/**
+ * 
+ * @author harold.murcia
+ *
+ */
 public class StorageException extends RuntimeException {
 
     public StorageException(String message) {
