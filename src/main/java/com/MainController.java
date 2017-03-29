@@ -92,7 +92,7 @@ public class MainController {
                                    RedirectAttributes redirectAttributes) {
     	storageService.store(file);
         redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded " + file.getOriginalFilename() + "!");
+                "El archivo " + file.getOriginalFilename() + " ha sido subido exitosamente!");
         
         summationService.executeFile();
         

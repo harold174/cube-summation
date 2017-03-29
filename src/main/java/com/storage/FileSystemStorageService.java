@@ -95,7 +95,7 @@ public class FileSystemStorageService implements StorageService {
 	@Override
 	public void deleteFile(String fileName) {
 		
-    	File file = new File(rootLocation+"/input.in");
+    	File file = new File(rootLocation+"/"+fileName);
     	file.delete();
 		
 	}

@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,7 +17,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SummationImpl implements SummationService {
-	
+
 	/**
 	 * Input file name
 	 */
@@ -35,6 +37,11 @@ public class SummationImpl implements SummationService {
 	 * Query operation name
 	 */
 	public static final String QUERY_OPERATION = "QUERY";
+
+	/*
+	 * Define the logger object for this class
+	 */
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	/**
 	 * Number of test cases in the file
@@ -60,16 +67,17 @@ public class SummationImpl implements SummationService {
 
 
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			log.error("File not found", e);
+
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+			log.error("I/0 file error", e);
 		}
-		
+
 		System.out.println("File successfully processed");
-	
-		
+
+
 	}
 
 	/**
@@ -95,6 +103,7 @@ public class SummationImpl implements SummationService {
 
 	/**
 	 * Execute operations for each test case
+	 * 
 	 * @param br {@link BufferedReader} file reader
 	 * @param writer {@link PrintWriter} file writer
 	 * @param matrixSize {@link Integer} matrix dimension
@@ -143,16 +152,16 @@ public class SummationImpl implements SummationService {
 	 */
 	private static void executeQuery(PrintWriter writer, int[][][] matrix, int x1, int y1, int z1, int x2, int y2,
 			int z2) {
-			
-			int suma = 0;
-			for(int x = x1-1; x <= x2-1; x++){
-				for (int y = y1-1; y <= y2-1; y++) {
-					for (int z = z1-1; z <= z2-1; z++) {
-						suma += matrix[x][y][z];
-					}
+
+		int suma = 0;
+		for(int x = x1-1; x <= x2-1; x++){
+			for (int y = y1-1; y <= y2-1; y++) {
+				for (int z = z1-1; z <= z2-1; z++) {
+					suma += matrix[x][y][z];
 				}
 			}
-			writer.println(suma);
+		}
+		writer.println(suma);
 	}
 
 
@@ -167,6 +176,6 @@ public class SummationImpl implements SummationService {
 	private static void executeUpdate(int[][][] matrix, int x, int y, int z, int w) {
 
 		matrix[x-1][y-1][z-1] = w;
-		
+
 	}
 }
