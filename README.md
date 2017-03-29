@@ -5,7 +5,7 @@ The next project present a posible solution for cube summation problem, using Sp
 ## Development Installation
 
 1. Clone repository
-2. Open with Eclipse IDE
+2. Import with Eclipse IDE like a maven existing project.
 3. Right click on the project and select Maven, and later update project.
 4. Right click on the project and select Run as Java Application, at this step you must select the main class call "CubeSummationApplication".
 5. Open http://localhost:8080/
