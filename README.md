@@ -12,7 +12,8 @@ The next project present a posible solution for cube summation problem, using Sp
 
 ## Production Installation
 
-1. If you don´t have maven, please install it: https://maven.apache.org/install.html
-2. With console command cd in cube-summation and run '''mvn package'''
-3. Run '''java -jar target/cube-summation-0.0.1-SNAPSHOT.jar'''
+1. Clone repository
+2. If you don´t have maven, please install it: https://maven.apache.org/install.html
+3. With console command cd in cube-summation and run ```mvn package```
+3. Run ```java -jar target/cube-summation-0.0.1-SNAPSHOT.jar```
 4. Open http://localhost:8080/
